@@ -38,7 +38,7 @@ resource "aws_elasticache_replication_group" "main" {
   engine_version             =  var.engine_version
   automatic_failover_enabled =  true
   node_type                  =  var.node_type
-  num_cache_clusters         =  var.num_cache_clusters
+  num_node_groups            =  var.num_node_groups
   parameter_group_name       = "default.redis6.x.cluster.on"
   replicas_per_node_group    =  var.replicas_per_node_group
   security_group_ids         = [aws_security_group.main.id]
