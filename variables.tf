@@ -4,3 +4,9 @@ variable "sg_subnet_cidr" {}
 variable "subnet_ids" {}
 variable "vpc_id" {}
 variable "tags" {}
+variable "node_type" {}
+variable "num_cache_clusters" {}
+variable "engine" {}
+variable "engine_version" {}
+variable "kms_key_arn" {}
+variable "replicas_per_node_group" {}
