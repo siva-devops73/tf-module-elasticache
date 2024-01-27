@@ -49,7 +49,7 @@ resource "aws_elasticache_replication_group" "main" {
 
 # Trobule shooting purpose
 resource "aws_elasticache_cluster" "instance" {
-  cluster_id           = "${var.component}-${var.env}"
+  cluster_id           = "${var.component}-${var.env}-instance"
   engine               =  var.engine
   node_type            =  var.node_type
   num_cache_nodes      = 1
