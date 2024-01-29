@@ -31,21 +31,21 @@ resource "aws_elasticache_subnet_group" "main" {
 }
 
 
-resource "aws_elasticache_replication_group" "main" {
-  replication_group_id       = "${var.component}-${var.env}"
-  description                = "${var.component}-${var.env}"
-  engine                     =  var.engine
-  engine_version             =  var.engine_version
-  automatic_failover_enabled =  true
-  node_type                  =  var.node_type
-  num_node_groups            =  var.num_node_groups
-  parameter_group_name       = "default.redis6.x.cluster.on"
-  replicas_per_node_group    =  var.replicas_per_node_group
-  security_group_ids         = [aws_security_group.main.id]
-  subnet_group_name          = aws_elasticache_subnet_group.main.name
-  kms_key_id                = var.kms_key_arn
-  at_rest_encryption_enabled = true
-}
+#resource "aws_elasticache_replication_group" "main" {
+#  replication_group_id       = "${var.component}-${var.env}"
+#  description                = "${var.component}-${var.env}"
+#  engine                     =  var.engine
+#  engine_version             =  var.engine_version
+#  automatic_failover_enabled =  true
+#  node_type                  =  var.node_type
+#  num_node_groups            =  var.num_node_groups
+#  parameter_group_name       = "default.redis6.x.cluster.on"
+#  replicas_per_node_group    =  var.replicas_per_node_group
+#  security_group_ids         = [aws_security_group.main.id]
+#  subnet_group_name          = aws_elasticache_subnet_group.main.name
+#  kms_key_id                = var.kms_key_arn
+#  at_rest_encryption_enabled = true
+#}
 
 # Trobule shooting purpose
 resource "aws_elasticache_cluster" "instance" {
